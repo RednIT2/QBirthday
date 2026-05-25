@@ -168,32 +168,32 @@ export default function WishWall() {
   return (
     <div className="w-full text-white">
       {/* SECTION 1: HEADER (HERO) */}
-      <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 snap-start relative overflow-hidden">
+      <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 max-h-[500px]:!pb-8 snap-start relative overflow-hidden">
         <div className="z-10 text-center px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
-          <div className="flex flex-col items-center justify-center gap-6">
-            <p className="text-lg md:text-2xl text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 rounded-full">
+          <div className="flex flex-col items-center justify-center gap-6 max-h-[500px]:!gap-3">
+            <p className="text-lg md:text-2xl max-h-[500px]:!text-sm text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 max-h-[500px]:!py-1 rounded-full">
               30.05.2026
             </p>
             
-            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 w-[95%] sm:w-full mx-auto">
+            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 max-h-[500px]:!p-3 w-[95%] sm:w-full mx-auto">
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Ngày</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Ngày</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Giờ</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Giờ</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Phút</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Phút</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Giây</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Giây</span>
               </div>
             </div>
           </div>
