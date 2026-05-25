@@ -25,10 +25,29 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <!-- Background Video: Dual Video Crossfade -->
-    <div class="fixed inset-0 z-0 h-full w-full">
+    <div class="fixed inset-0 z-0 h-full w-full bg-black">
+      <!-- Màn hình điện thoại: 2 Video nền mờ phía sau -->
+      <video 
+        id="bg-video-blur-1"
+        class="md:hidden absolute inset-0 h-full w-full object-cover blur-3xl scale-125 opacity-40 transition-opacity duration-1000" 
+        src={`${base}/Q.webm`} 
+        muted 
+        playsinline
+        preload="auto"
+      ></video>
+      <video 
+        id="bg-video-blur-2"
+        class="md:hidden absolute inset-0 h-full w-full object-cover blur-3xl scale-125 opacity-0 transition-opacity duration-1000" 
+        src={`${base}/Q.webm`} 
+        muted 
+        playsinline
+        preload="auto"
+      ></video>
+
+      <!-- Video chính: object-contain trên điện thoại, object-cover trên laptop -->
       <video 
         id="bg-video-1"
-        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100" 
+        class="absolute inset-0 h-full w-full object-contain md:object-cover transition-opacity duration-1000 opacity-100" 
         src={`${base}/Q.webm`} 
         muted 
         playsinline
@@ -36,7 +55,7 @@ const base = import.meta.env.BASE_URL;
       ></video>
       <video 
         id="bg-video-2"
-        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0" 
+        class="absolute inset-0 h-full w-full object-contain md:object-cover transition-opacity duration-1000 opacity-0" 
         src={`${base}/Q.webm`} 
         muted 
         playsinline
@@ -57,29 +76,48 @@ const base = import.meta.env.BASE_URL;
       // ==========================================
       const v1 = document.getElementById('bg-video-1');
       const v2 = document.getElementById('bg-video-2');
+      const b1 = document.getElementById('bg-video-blur-1');
+      const b2 = document.getElementById('bg-video-blur-2');
       let activeVideo = 1;
       const CROSSFADE_TIME = 0.5;
 
       function checkLoop() {
         const current = activeVideo === 1 ? v1 : v2;
         const next = activeVideo === 1 ? v2 : v1;
+        const currentBlur = activeVideo === 1 ? b1 : b2;
+        const nextBlur = activeVideo === 1 ? b2 : b1;
 
         if (current.duration && current.currentTime >= current.duration - CROSSFADE_TIME) {
           if (next.paused) {
             next.currentTime = 0;
+            nextBlur.currentTime = 0;
+            
             next.play().catch(e => {});
+            nextBlur.play().catch(e => {});
             
             next.classList.remove('opacity-0');
             next.classList.add('opacity-100');
             
+            nextBlur.classList.remove('opacity-0');
+            nextBlur.classList.add('opacity-40');
+            
             current.classList.remove('opacity-100');
             current.classList.add('opacity-0');
+            
+            currentBlur.classList.remove('opacity-40');
+            currentBlur.classList.add('opacity-0');
             
             activeVideo = activeVideo === 1 ? 2 : 1;
           }
         } else if (current.currentTime < CROSSFADE_TIME) {
           if (!next.paused && next.currentTime > CROSSFADE_TIME) {
             next.pause();
+            nextBlur.pause();
+          }
+        } else {
+          // Keep blur video in sync just in case
+          if (Math.abs(currentBlur.currentTime - current.currentTime) > 0.5) {
+             currentBlur.currentTime = current.currentTime;
           }
         }
         requestAnimationFrame(checkLoop);
@@ -134,6 +172,7 @@ const base = import.meta.env.BASE_URL;
         
         // Start video
         v1.play().catch(e => console.log('Video play error:', e));
+        b1.play().catch(e => console.log('Video play error:', e));
 
         // Hide overlay and reveal content
         overlay.style.opacity = '0';
