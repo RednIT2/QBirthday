@@ -30,6 +30,14 @@ jobs:
       - name: Build Astro
         working-directory: ./frontend
         run: |
+          if [ -z "${{ secrets.VITE_SUPABASE_URL }}" ]; then
+            echo "ERROR: VITE_SUPABASE_URL is empty!"
+            exit 1
+          fi
+          if [ -z "${{ secrets.VITE_SUPABASE_ANON_KEY }}" ]; then
+            echo "ERROR: VITE_SUPABASE_ANON_KEY is empty!"
+            exit 1
+          fi
           echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" >> .env
           echo "VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }}" >> .env
           npm run build
