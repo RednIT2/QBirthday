@@ -12,13 +12,13 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Liquid Glass Effect (Black tint, 75% transparent) */
+/* Liquid Glass Effect (Dark Frosted, 40% transparent) */
 .liquid-glass {
-  background: rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
