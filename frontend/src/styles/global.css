@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-birthday-pink: #ff6b6b;
+  --color-birthday-blue: #4ecdc4;
+  --color-birthday-yellow: #feca57;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Restored Liquid Glass Effect (~60% blur) */
+.liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: skewX(-20deg);
+  animation: shine 8s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Custom styles for inputs to match the transparent theme */
+.input-glass {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 0.5rem;
+  color: white !important;
+}
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.input-glass:focus {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-color: white !important;
+}

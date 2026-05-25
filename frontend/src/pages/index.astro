@@ -1,0 +1,148 @@
+---
+import '../styles/global.css';
+import WishWall from '../components/WishWall.jsx';
+---
+
+<html lang="vi" class="scroll-smooth snap-y snap-mandatory bg-black">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Happy Birthday Phương Quỳnh!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="text-white antialiased font-['Space_Grotesk'] bg-black overflow-hidden h-screen">
+    
+    <!-- Entry Overlay (Popup) -->
+    <div id="entry-overlay" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-1000">
+      <div class="text-center animate-pulse cursor-pointer p-8 rounded-3xl hover:bg-white/5 transition-colors" id="start-btn">
+        <div class="text-6xl mb-6">💌</div>
+        <h2 class="text-2xl md:text-4xl font-bold text-white uppercase tracking-widest mb-4">Gửi Phương Quỳnh</h2>
+        <p class="text-pink-400 text-sm md:text-base tracking-widest uppercase font-bold border border-pink-400/50 rounded-full px-6 py-2 inline-block">Chạm để mở và bật nhạc</p>
+      </div>
+    </div>
+
+    <!-- Background Video: Dual Video Crossfade -->
+    <div class="fixed inset-0 z-0 h-full w-full">
+      <video 
+        id="bg-video-1"
+        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100" 
+        src="/Q.webm" 
+        muted 
+        playsinline
+      ></video>
+      <video 
+        id="bg-video-2"
+        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0" 
+        src="/Q.webm" 
+        muted 
+        playsinline
+      ></video>
+    </div>
+
+    <!-- Hidden YouTube Player for Audio -->
+    <div id="youtube-audio" class="hidden"></div>
+
+    <main class="relative z-10 opacity-0 transition-opacity duration-1000" id="main-content">
+      <WishWall client:load />
+    </main>
+
+    <script is:inline>
+      // ==========================================
+      // 1. DUAL VIDEO SEAMLESS LOOP
+      // ==========================================
+      const v1 = document.getElementById('bg-video-1');
+      const v2 = document.getElementById('bg-video-2');
+      let activeVideo = 1;
+      const CROSSFADE_TIME = 0.5;
+
+      function checkLoop() {
+        const current = activeVideo === 1 ? v1 : v2;
+        const next = activeVideo === 1 ? v2 : v1;
+
+        if (current.duration && current.currentTime >= current.duration - CROSSFADE_TIME) {
+          if (next.paused) {
+            next.currentTime = 0;
+            next.play().catch(e => {});
+            
+            next.classList.remove('opacity-0');
+            next.classList.add('opacity-100');
+            
+            current.classList.remove('opacity-100');
+            current.classList.add('opacity-0');
+            
+            activeVideo = activeVideo === 1 ? 2 : 1;
+          }
+        } else if (current.currentTime < CROSSFADE_TIME) {
+          if (!next.paused && next.currentTime > CROSSFADE_TIME) {
+            next.pause();
+          }
+        }
+        requestAnimationFrame(checkLoop);
+      }
+      requestAnimationFrame(checkLoop);
+
+      // ==========================================
+      // 2. YOUTUBE AUDIO BACKGROUND & ENTRY LOGIC
+      // ==========================================
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      window.onYouTubeIframeAPIReady = function() {
+        player = new YT.Player('youtube-audio', {
+          height: '0',
+          width: '0',
+          videoId: 'oZZECzjIQX0',
+          playerVars: {
+            'autoplay': 1,
+            'controls': 0,
+            'loop': 1,
+            'playlist': 'oZZECzjIQX0',
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      };
+
+      function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+      }
+
+      // Entry Logic
+      const overlay = document.getElementById('entry-overlay');
+      const startBtn = document.getElementById('start-btn');
+      const mainContent = document.getElementById('main-content');
+      const body = document.body;
+
+      startBtn.addEventListener('click', () => {
+        // Unmute and play music
+        if (player && player.unMute) {
+          player.unMute();
+          player.setVolume(100);
+          player.playVideo();
+        }
+        
+        // Start video
+        v1.play().catch(e => console.log('Video play error:', e));
+
+        // Hide overlay and reveal content
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        
+        mainContent.style.opacity = '1';
+        
+        // Allow scrolling
+        setTimeout(() => {
+          overlay.remove();
+          body.classList.remove('overflow-hidden', 'h-screen');
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
