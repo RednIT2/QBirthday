@@ -169,31 +169,31 @@ export default function WishWall() {
     <div className="w-full text-white">
       {/* SECTION 1: HEADER (HERO) */}
       <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 snap-start relative overflow-hidden">
-        <div className="z-10 text-center px-2 md:px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
+        <div className="z-10 text-center px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
           <div className="flex flex-col items-center justify-center gap-6">
-            <p className="text-xl md:text-2xl text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg bg-black/30 border border-white/20 px-8 py-2 rounded-full backdrop-blur-md">
+            <p className="text-lg md:text-2xl text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 rounded-full">
               30.05.2026
             </p>
             
-            <div className="flex justify-between items-center gap-2 md:gap-6 liquid-glass p-5 md:p-10 shadow-2xl backdrop-blur-xl bg-black/30 border-white/20 w-full rounded-3xl">
+            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 w-[95%] sm:w-full mx-auto">
               <div className="flex flex-col items-center flex-1">
-                <span className="text-3xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
-                <span className="text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-bold mt-2">Ngày</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Ngày</span>
               </div>
-              <div className="text-2xl md:text-5xl font-light text-gray-400/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-3xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className="text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-bold mt-2">Giờ</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Giờ</span>
               </div>
-              <div className="text-2xl md:text-5xl font-light text-gray-400/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-3xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className="text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-bold mt-2">Phút</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Phút</span>
               </div>
-              <div className="text-2xl md:text-5xl font-light text-gray-400/50 -translate-y-2 md:-translate-y-3">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-light text-white/50 -translate-y-2 md:-translate-y-3">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-3xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className="text-[10px] md:text-sm uppercase tracking-widest text-gray-300 font-bold mt-2">Giây</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2">Giây</span>
               </div>
             </div>
           </div>
@@ -209,10 +209,10 @@ export default function WishWall() {
       </section>
 
       {/* SECTION 3: WISH WALL */}
-      <section id="wall-section" className="h-screen w-full flex flex-col justify-center snap-start px-4 md:px-8 py-10 relative">
-        <div className="max-w-6xl w-full mx-auto flex flex-col h-full liquid-glass p-6 md:p-10 shadow-2xl">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 shrink-0">
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white drop-shadow-md uppercase tracking-widest">
+      <section id="wall-section" className="h-screen w-full flex flex-col justify-center snap-start px-2 sm:px-4 md:px-8 py-10 relative">
+        <div className="max-w-6xl w-[95%] md:w-full mx-auto flex flex-col h-full liquid-glass p-4 sm:p-6 md:p-10">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8 gap-4 shrink-0">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white drop-shadow-md uppercase tracking-widest text-center">
               LỜI CHÚC TỪ MỌI NGƯỜI
             </h2>
             <div className="relative w-full md:w-72">
@@ -237,7 +237,7 @@ export default function WishWall() {
                   <div 
                     ref={isLastElement ? lastWishElementRef : null}
                     key={wish.id}
-                    className="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl hover:bg-white/20"
+                    className="liquid-glass !bg-white/10 !border-white/10 p-5 md:p-6 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl hover:!bg-white/20"
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex-1 min-w-0">

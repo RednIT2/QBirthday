@@ -45,11 +45,11 @@ export default function WishForm({ onAddWish }) {
   };
 
   return (
-    <div className="liquid-glass p-8 mb-8 w-full max-w-2xl mx-auto transform transition-all">
-      <h2 className="text-3xl font-extrabold text-center mb-8 text-white drop-shadow-sm uppercase tracking-widest">
+    <div className="liquid-glass p-5 sm:p-6 md:p-8 mb-8 w-[95%] sm:w-[90%] md:w-full max-w-2xl mx-auto transform transition-all">
+      <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-6 md:mb-8 text-white drop-shadow-sm uppercase tracking-widest">
         GỬI LỜI CHÚC
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
         <div className="form-control">
           <label className="label">
             <span className="label-text font-bold text-gray-200 uppercase tracking-wider text-sm">USERNAME THREADS</span>
