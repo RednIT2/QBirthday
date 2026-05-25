@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import WishWall from '../components/WishWall.jsx';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="vi" class="scroll-smooth snap-y snap-mandatory bg-black">
@@ -27,21 +29,21 @@ import WishWall from '../components/WishWall.jsx';
       <video 
         id="bg-video-1"
         class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-100" 
-        src="/Q.webm" 
+        src={`${base}Q.webm`} 
         muted 
         playsinline
       ></video>
       <video 
         id="bg-video-2"
         class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 opacity-0" 
-        src="/Q.webm" 
+        src={`${base}Q.webm`} 
         muted 
         playsinline
       ></video>
     </div>
 
-    <!-- Hidden YouTube Player for Audio -->
-    <div id="youtube-audio" class="hidden"></div>
+    <!-- Hidden YouTube Player for Audio (Do not use display: none) -->
+    <div id="youtube-audio" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
 
     <main class="relative z-10 opacity-0 transition-opacity duration-1000" id="main-content">
       <WishWall client:load />
