@@ -170,8 +170,8 @@ export default function WishWall() {
       {/* SECTION 1: HEADER (HERO) */}
       <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 [@media(max-height:500px)]:!pb-2 snap-start relative overflow-hidden">
         <div className="z-10 text-center px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
-          <div className="flex flex-col items-center justify-center gap-6 [@media(max-height:500px)]:!gap-2 [@media(max-height:500px)]:flex-row [@media(max-height:500px)]:items-end">
-            <p className="text-lg md:text-2xl [@media(max-height:500px)]:!text-xs text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 [@media(max-height:500px)]:!py-1 [@media(max-height:500px)]:!px-4 [@media(max-height:500px)]:!mb-1 rounded-full shrink-0">
+          <div className="flex flex-col items-center justify-center gap-6 [@media(max-height:500px)]:!gap-2">
+            <p className="text-lg md:text-2xl [@media(max-height:500px)]:!text-sm text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 [@media(max-height:500px)]:!py-1.5 [@media(max-height:500px)]:!px-6 rounded-full shrink-0">
               30.05.2026
             </p>
             
