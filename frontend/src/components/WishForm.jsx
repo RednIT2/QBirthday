@@ -49,8 +49,8 @@ export default function WishForm({ onAddWish }) {
       <h2 className="text-2xl sm:text-3xl [@media(max-height:500px)]:!text-base font-extrabold text-center mb-6 md:mb-8 [@media(max-height:500px)]:!mb-3 text-white drop-shadow-sm uppercase tracking-widest">
         GỬI LỜI CHÚC
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 [@media(max-height:500px)]:!space-y-0 [@media(max-height:500px)]:flex [@media(max-height:500px)]:flex-row [@media(max-height:500px)]:gap-2 [@media(max-height:500px)]:items-end">
-        <div className="form-control [@media(max-height:500px)]:flex-1">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 [@media(max-height:500px)]:!space-y-0 [@media(max-height:500px)]:grid [@media(max-height:500px)]:grid-cols-4 [@media(max-height:500px)]:gap-3 [@media(max-height:500px)]:items-end">
+        <div className="form-control [@media(max-height:500px)]:col-span-3 [@media(max-height:500px)]:order-1">
           <label className="label [@media(max-height:500px)]:!py-0 [@media(max-height:500px)]:!mb-1">
             <span className="label-text font-bold text-gray-200 uppercase tracking-wider text-sm [@media(max-height:500px)]:!text-[10px]">USERNAME THREADS</span>
           </label>
@@ -67,7 +67,7 @@ export default function WishForm({ onAddWish }) {
           </div>
         </div>
         
-        <div className="form-control [@media(max-height:500px)]:flex-[2]">
+        <div className="form-control [@media(max-height:500px)]:col-span-4 [@media(max-height:500px)]:order-3">
           <label className="label [@media(max-height:500px)]:!py-0 [@media(max-height:500px)]:!mb-1">
             <span className="label-text font-bold text-gray-200 uppercase tracking-wider text-sm [@media(max-height:500px)]:!text-[10px]">LỜI CHÚC</span>
           </label>
@@ -85,7 +85,7 @@ export default function WishForm({ onAddWish }) {
         
         <button 
           type="submit" 
-          className={`btn btn-lg w-full [@media(max-height:500px)]:w-auto [@media(max-height:500px)]:!h-10 [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!mt-0 [@media(max-height:500px)]:!px-6 [@media(max-height:500px)]:!text-sm text-white bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 shadow-[0_4px_15px_rgba(0,0,0,0.2)] rounded-2xl mt-6 uppercase tracking-widest font-bold transition-all ${isSubmitting ? 'loading' : ''}`}
+          className={`btn btn-lg w-full [@media(max-height:500px)]:col-span-1 [@media(max-height:500px)]:order-2 [@media(max-height:500px)]:!h-10 [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!mt-0 [@media(max-height:500px)]:!px-2 [@media(max-height:500px)]:!text-sm text-white bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 shadow-[0_4px_15px_rgba(0,0,0,0.2)] rounded-2xl mt-6 uppercase tracking-widest font-bold transition-all ${isSubmitting ? 'loading' : ''}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? 'ĐANG GỬI...' : 'GỬI'}
