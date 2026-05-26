@@ -45,7 +45,7 @@ export default function WishForm({ onAddWish }) {
   };
 
   return (
-    <div className="liquid-glass p-5 sm:p-6 md:p-8 mb-8 [@media(max-height:500px)]:!p-3 [@media(max-height:500px)]:!mb-2 [@media(max-height:500px)]:mt-auto w-[95%] sm:w-[90%] md:w-full max-w-2xl mx-auto transform transition-all duration-500 focus-within:-translate-y-[20vh] md:focus-within:translate-y-0 [@media(max-height:500px)]:focus-within:translate-y-0">
+    <div className="liquid-glass p-5 sm:p-6 md:p-8 mb-8 [@media(max-height:500px)]:!p-3 [@media(max-height:500px)]:!mb-2 [@media(max-height:500px)]:mt-auto w-[95%] sm:w-[90%] md:w-full max-w-2xl mx-auto transform transition-all duration-500 focus-within:-translate-y-[20vh] md:focus-within:translate-y-0 [@media(max-height:500px)]:focus-within:-translate-y-[35vh]">
       <h2 className="text-2xl sm:text-3xl [@media(max-height:500px)]:!text-base font-extrabold text-center mb-6 md:mb-8 [@media(max-height:500px)]:!mb-3 text-white drop-shadow-sm uppercase tracking-widest">
         GỬI LỜI CHÚC
       </h2>
@@ -59,7 +59,7 @@ export default function WishForm({ onAddWish }) {
             <input 
               type="text" 
               placeholder="zuck" 
-              className="input input-lg w-full pl-10 [@media(max-height:500px)]:!pl-7 [@media(max-height:500px)]:!h-10 [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!text-sm input-glass transition-all shadow-inner focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium" 
+              className="input input-lg w-full pl-10 [@media(max-height:500px)]:!pl-7 [@media(max-height:500px)]:!h-10 [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!text-base input-glass transition-all shadow-inner focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium" 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -72,13 +72,13 @@ export default function WishForm({ onAddWish }) {
             <span className="label-text font-bold text-gray-200 uppercase tracking-wider text-sm [@media(max-height:500px)]:!text-[10px]">LỜI CHÚC</span>
           </label>
           <div className="mt-1 [@media(max-height:500px)]:!mt-0">
-            <input 
-              type="text"
-              className="input input-lg w-full [@media(max-height:500px)]:!h-10 [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!text-sm input-glass transition-all shadow-inner focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium" 
+            <textarea 
+              className="textarea textarea-lg w-full min-h-[4rem] [@media(max-height:500px)]:!min-h-[2.5rem] [@media(max-height:500px)]:!h-auto [@media(max-height:500px)]:!text-base input-glass transition-all shadow-inner focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium leading-relaxed resize-y custom-scrollbar" 
               placeholder="Nhập lời chúc của bạn..."
               value={content}
               onChange={(e) => setContent(e.target.value)}
               required
+              rows={2}
             />
           </div>
         </div>
