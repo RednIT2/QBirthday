@@ -45,7 +45,7 @@ export default function WishForm({ onAddWish }) {
   };
 
   return (
-    <div className="liquid-glass p-5 sm:p-6 md:p-8 mb-8 [@media(max-height:500px)]:!p-3 [@media(max-height:500px)]:!mb-2 [@media(max-height:500px)]:mt-auto w-[95%] sm:w-[90%] md:w-full max-w-2xl mx-auto transform transition-all">
+    <div className="liquid-glass p-5 sm:p-6 md:p-8 mb-8 [@media(max-height:500px)]:!p-3 [@media(max-height:500px)]:!mb-2 [@media(max-height:500px)]:mt-auto w-[95%] sm:w-[90%] md:w-full max-w-2xl mx-auto transform transition-all duration-500 focus-within:-translate-y-[20vh] md:focus-within:translate-y-0 [@media(max-height:500px)]:focus-within:translate-y-0">
       <h2 className="text-2xl sm:text-3xl [@media(max-height:500px)]:!text-base font-extrabold text-center mb-6 md:mb-8 [@media(max-height:500px)]:!mb-3 text-white drop-shadow-sm uppercase tracking-widest">
         GỬI LỜI CHÚC
       </h2>
