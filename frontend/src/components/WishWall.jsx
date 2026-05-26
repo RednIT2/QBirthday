@@ -227,7 +227,7 @@ export default function WishWall() {
             </div>
           </div>
           
-          <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+          <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar overscroll-contain">
             <div className="grid grid-cols-1 md:grid-cols-2 [@media(max-height:500px)]:grid-cols-2 lg:grid-cols-3 gap-6 [@media(max-height:500px)]:gap-3 pb-4">
               {filteredWishes.map((wish, index) => {
                 const isLastElement = filteredWishes.length === index + 1;
