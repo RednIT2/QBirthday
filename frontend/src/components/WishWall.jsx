@@ -168,7 +168,7 @@ export default function WishWall() {
   return (
     <div className="w-full text-white">
       {/* SECTION 1: HEADER (HERO) */}
-      <section className="min-h-[100dvh] w-full flex flex-col items-center justify-end pb-16 md:pb-32 [@media(max-height:500px)]:!pb-2 relative overflow-hidden">
+      <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 [@media(max-height:500px)]:!pb-2 snap-start relative overflow-hidden">
         <div className="z-10 text-center px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
           <div className="flex flex-col items-center justify-center gap-6 [@media(max-height:500px)]:!gap-2">
             <p className="text-lg md:text-2xl [@media(max-height:500px)]:!text-sm text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 [@media(max-height:500px)]:!py-1.5 [@media(max-height:500px)]:!px-6 rounded-full shrink-0">
@@ -204,13 +204,13 @@ export default function WishWall() {
       </section>
 
       {/* SECTION 2: FORM */}
-      <section id="form-section" className="min-h-[100dvh] w-full flex items-center justify-center [@media(max-height:500px)]:items-end [@media(max-height:500px)]:pb-2 px-4 relative">
+      <section id="form-section" className="h-screen w-full flex items-center justify-center [@media(max-height:500px)]:items-end [@media(max-height:500px)]:pb-2 snap-start px-4 relative">
         <WishForm onAddWish={handleAddWish} />
       </section>
 
       {/* SECTION 3: WISH WALL */}
-      <section id="wall-section" className="min-h-[100dvh] w-full flex flex-col justify-start px-2 sm:px-4 md:px-8 py-10 [@media(max-height:500px)]:!py-4 relative">
-        <div className="max-w-6xl w-[95%] md:w-full mx-auto flex flex-col liquid-glass p-4 sm:p-6 md:p-10 [@media(max-height:500px)]:!p-4 mb-20">
+      <section id="wall-section" className="h-screen w-full flex flex-col justify-center snap-start px-2 sm:px-4 md:px-8 py-10 [@media(max-height:500px)]:!py-2 relative">
+        <div className="max-w-6xl w-[95%] md:w-full mx-auto flex flex-col h-full liquid-glass p-4 sm:p-6 md:p-10 [@media(max-height:500px)]:!p-3">
           <div className="flex flex-col md:flex-row [@media(max-height:500px)]:!flex-row justify-between items-center mb-6 md:mb-8 [@media(max-height:500px)]:!mb-3 gap-4 shrink-0">
             <h2 className="text-xl sm:text-2xl md:text-4xl [@media(max-height:500px)]:!text-base font-extrabold text-white drop-shadow-md uppercase tracking-widest text-center">
               LỜI CHÚC TỪ MỌI NGƯỜI
@@ -227,8 +227,8 @@ export default function WishWall() {
             </div>
           </div>
           
-          <div className="w-full mt-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 [@media(max-height:500px)]:grid-cols-2 lg:grid-cols-3 gap-6 [@media(max-height:500px)]:gap-4 pb-4">
+          <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+            <div className="grid grid-cols-1 md:grid-cols-2 [@media(max-height:500px)]:grid-cols-2 lg:grid-cols-3 gap-6 [@media(max-height:500px)]:gap-3 pb-4">
               {filteredWishes.map((wish, index) => {
                 const isLastElement = filteredWishes.length === index + 1;
                 const isLiked = likedIds.has(wish.id);
