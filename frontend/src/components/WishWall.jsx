@@ -168,67 +168,67 @@ export default function WishWall() {
   return (
     <div className="w-full text-white">
       {/* SECTION 1: HEADER (HERO) */}
-      <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 max-h-[500px]:!pb-8 snap-start relative overflow-hidden">
+      <section className="h-screen w-full flex flex-col items-center justify-end pb-16 md:pb-32 max-h-[500px]:!pb-2 snap-start relative overflow-hidden">
         <div className="z-10 text-center px-4 transform transition-all duration-1000 w-full max-w-3xl mx-auto">
-          <div className="flex flex-col items-center justify-center gap-6 max-h-[500px]:!gap-3">
-            <p className="text-lg md:text-2xl max-h-[500px]:!text-sm text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 max-h-[500px]:!py-1 rounded-full">
+          <div className="flex flex-col items-center justify-center gap-6 max-h-[500px]:!gap-2 max-h-[500px]:flex-row max-h-[500px]:items-end">
+            <p className="text-lg md:text-2xl max-h-[500px]:!text-xs text-white font-bold uppercase tracking-[0.3em] drop-shadow-lg liquid-glass px-8 py-2 max-h-[500px]:!py-1 max-h-[500px]:!px-4 max-h-[500px]:!mb-1 rounded-full shrink-0">
               30.05.2026
             </p>
             
-            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 max-h-[500px]:!p-3 w-[95%] sm:w-full mx-auto">
+            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 max-h-[500px]:!p-2 w-[95%] sm:w-full mx-auto max-h-[500px]:flex-1">
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Ngày</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-lg font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[8px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-0">Ngày</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-lg font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-0.5">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Giờ</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-lg font-bold text-white drop-shadow-md">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[8px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-0">Giờ</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-lg font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-0.5">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Phút</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-lg font-bold text-white drop-shadow-md">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[8px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-0">Phút</span>
               </div>
-              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-xl font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-1">:</div>
+              <div className="text-xl sm:text-3xl md:text-5xl max-h-[500px]:!text-lg font-light text-white/50 -translate-y-2 md:-translate-y-3 max-h-[500px]:!-translate-y-0.5">:</div>
               <div className="flex flex-col items-center flex-1">
-                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-2xl font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[9px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-1">Giây</span>
+                <span className="text-2xl sm:text-4xl md:text-6xl max-h-[500px]:!text-lg font-bold text-white drop-shadow-md">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-[9px] sm:text-[10px] md:text-sm max-h-[500px]:!text-[8px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 max-h-[500px]:!mt-0">Giây</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-4 md:bottom-8 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity" onClick={() => document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' })}>
+        <div className="absolute bottom-4 md:bottom-8 max-h-[500px]:hidden animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity" onClick={() => document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' })}>
           <svg className="w-8 h-8 md:w-10 md:h-10 mx-auto text-white drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
       </section>
 
       {/* SECTION 2: FORM */}
-      <section id="form-section" className="h-screen w-full flex items-center justify-center snap-start px-4 relative">
+      <section id="form-section" className="h-screen w-full flex items-center justify-center max-h-[500px]:items-end max-h-[500px]:pb-2 snap-start px-4 relative">
         <WishForm onAddWish={handleAddWish} />
       </section>
 
       {/* SECTION 3: WISH WALL */}
-      <section id="wall-section" className="h-screen w-full flex flex-col justify-center snap-start px-2 sm:px-4 md:px-8 py-10 relative">
-        <div className="max-w-6xl w-[95%] md:w-full mx-auto flex flex-col h-full liquid-glass p-4 sm:p-6 md:p-10">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-8 gap-4 shrink-0">
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white drop-shadow-md uppercase tracking-widest text-center">
+      <section id="wall-section" className="h-screen w-full flex flex-col justify-center snap-start px-2 sm:px-4 md:px-8 py-10 max-h-[500px]:!py-2 relative">
+        <div className="max-w-6xl w-[95%] md:w-full mx-auto flex flex-col h-full liquid-glass p-4 sm:p-6 md:p-10 max-h-[500px]:!p-3">
+          <div className="flex flex-col md:flex-row max-h-[500px]:!flex-row justify-between items-center mb-6 md:mb-8 max-h-[500px]:!mb-3 gap-4 shrink-0">
+            <h2 className="text-xl sm:text-2xl md:text-4xl max-h-[500px]:!text-base font-extrabold text-white drop-shadow-md uppercase tracking-widest text-center">
               LỜI CHÚC TỪ MỌI NGƯỜI
             </h2>
-            <div className="relative w-full md:w-72">
+            <div className="relative w-full md:w-72 max-h-[500px]:w-48">
               <input 
                 type="text" 
                 placeholder="Tìm username..." 
-                className="input w-full rounded-full input-glass transition-colors pl-10"
+                className="input max-h-[500px]:!h-8 max-h-[500px]:!min-h-[2rem] max-h-[500px]:!text-xs w-full rounded-full input-glass transition-colors pl-10"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <svg className="w-5 h-5 absolute left-3 top-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <svg className="w-5 h-5 absolute left-3 top-3 max-h-[500px]:top-1.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
           </div>
           
           <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 max-h-[500px]:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[500px]:gap-3 pb-4">
               {filteredWishes.map((wish, index) => {
                 const isLastElement = filteredWishes.length === index + 1;
                 const isLiked = likedIds.has(wish.id);
@@ -237,9 +237,9 @@ export default function WishWall() {
                   <div 
                     ref={isLastElement ? lastWishElementRef : null}
                     key={wish.id}
-                    className="liquid-glass !bg-white/10 !border-white/10 p-5 md:p-6 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl hover:!bg-white/20"
+                    className="liquid-glass !bg-white/10 !border-white/10 p-5 md:p-6 max-h-[500px]:!p-3 hover:-translate-y-1 transition-all duration-300 hover:shadow-2xl hover:!bg-white/20"
                   >
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-3 max-h-[500px]:!mb-1">
                       <div className="flex-1 min-w-0">
                         <a 
                           href={`https://www.threads.net/@${wish.threads_username}`} 
@@ -255,11 +255,11 @@ export default function WishWall() {
                       </span>
                     </div>
                     
-                    <p className="text-gray-100 whitespace-pre-wrap mb-5 text-[15px] leading-relaxed font-medium">
+                    <p className="text-gray-100 whitespace-pre-wrap mb-5 max-h-[500px]:!mb-2 text-[15px] max-h-[500px]:!text-[12px] leading-relaxed font-medium line-clamp-3">
                       {wish.content}
                     </p>
                     
-                    <div className="flex justify-end items-center pt-3 border-t border-white/10">
+                    <div className="flex justify-end items-center pt-3 max-h-[500px]:!pt-1 border-t border-white/10">
                       <button 
                         onClick={() => handleLike(wish.id, wish.likes_count)}
                         className={`btn btn-sm btn-ghost gap-2 rounded-full transition-all duration-300 ${isLiked ? 'text-pink-400 bg-white/10 pointer-events-none' : 'text-gray-300 hover:text-pink-300 hover:bg-white/10'}`}
