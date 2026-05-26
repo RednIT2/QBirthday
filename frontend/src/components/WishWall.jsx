@@ -175,7 +175,7 @@ export default function WishWall() {
               30.05.2026
             </p>
             
-            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 [@media(max-height:500px)]:!p-2 w-[95%] sm:w-full mx-auto [@media(max-height:500px)]:flex-1">
+            <div className="flex justify-between items-center gap-1 sm:gap-2 md:gap-6 liquid-glass p-4 sm:p-6 md:p-10 [@media(max-height:500px)]:!py-2 [@media(max-height:500px)]:!px-8 w-[95%] sm:w-full [@media(max-height:500px)]:!max-w-md mx-auto">
               <div className="flex flex-col items-center flex-1">
                 <span className="text-2xl sm:text-4xl md:text-6xl [@media(max-height:500px)]:!text-lg font-bold text-white drop-shadow-md">{String(timeLeft.days).padStart(2, '0')}</span>
                 <span className="text-[9px] sm:text-[10px] md:text-sm [@media(max-height:500px)]:!text-[8px] uppercase tracking-widest text-white/80 font-bold mt-1 md:mt-2 [@media(max-height:500px)]:!mt-0">Ngày</span>
